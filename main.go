@@ -120,7 +120,10 @@ func MessageDeploy(w http.ResponseWriter, r *http.Request) {
 		log.Println(err.Error())
 
 	}
-	log.Println(fmt.Sprintf("%d -  Send %s Monitor messge - %s",statusCode,message.GroupLabels["alertname"],message.Status))
+	rourceIp:=strings.Split(r.RemoteAddr,":")[0]
+	//rourceIp:=strings.Split(r.RemoteAddr,":")[0:len(strings.Split(r.RemoteAddr,"]"))-2]
+
+	log.Println(fmt.Sprintf("%s - %d -  Send %s Monitor messge - %s",rourceIp,statusCode,message.GroupLabels["alertname"],message.Status))
 }
 func SendMessage(msg *Flybook,url string) (respcode int,err error)  {
 	b := new(bytes.Buffer)
@@ -145,11 +148,12 @@ func SendMessage(msg *Flybook,url string) (respcode int,err error)  {
 }
 func main() {
 	flag.Parse()
+	log.Println(fmt.Sprintf("Starting Server At %s",boundPort))
 	if *flyBookHook == "" {
 		panic("Must Provide Flybook webhook")
 	}
 	http.HandleFunc("/",MessageDeploy )
-	log.Println(fmt.Sprintf("Starting Server At %s",boundPort))
+
 	log.Fatal(http.ListenAndServe(boundPort,nil))
 
 }
