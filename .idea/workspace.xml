@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="23cc613b-0eef-40bd-9d5e-b3294b17de38" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="23cc613b-0eef-40bd-9d5e-b3294b17de38" name="Default Changelist" comment="add message level">
+      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flybook.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -37,12 +39,13 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultGoTemplateProperty" value="Go Application" />
+    <property name="GO_FMT" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../github.com/prometheus-webhook-dingtalk" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../awesomeProject1" />
   </component>
   <component name="RunManager" selected="Go Build.go build main.go">
     <configuration name="go build flaybook" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
@@ -54,10 +57,19 @@
       <directory value="$PROJECT_DIR$/" />
       <method v="2" />
     </configuration>
+    <configuration name="go build flybook.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="flaybook" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/flybook.go" />
+      <package value="flaybook" />
+      <directory value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
     <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="flaybook" />
       <working_directory value="$PROJECT_DIR$/" />
-      <parameters value="-url=https://open.feishu.cn/open-apis/bot/hook/bcd7176ae53d444e8d042d9231d0a778  -url=https://open.feishu.cn/open-apis/bot/hook/bcd7176ae53d444e8d042d9231d0a778" />
+      <parameters value=" --url=default=https://open.feishu.cn/open-apis/bot/hook/bcd7176ae53d444e8d042d9231d0a778  --url=critical=https://open.feishu.cn/open-apis/bot/hook/2d43ce92cab14e29bcab4afe381aeca0" />
       <kind value="FILE" />
       <filePath value="$PROJECT_DIR$/main.go" />
       <package value="flaybook" />
@@ -67,10 +79,12 @@
     <list>
       <item itemvalue="Go Build.go build flaybook" />
       <item itemvalue="Go Build.go build main.go" />
+      <item itemvalue="Go Build.go build flybook.go" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Go Build.go build main.go" />
+        <item itemvalue="Go Build.go build flybook.go" />
         <item itemvalue="Go Build.go build flaybook" />
       </list>
     </recent_temporary>
@@ -78,42 +92,59 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add message level" />
+    <option name="LAST_COMMIT_MESSAGE" value="add message level" />
+  </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
     <proxy>direct</proxy>
   </component>
   <component name="WindowStateProjectService">
-    <state x="1780" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584605403370">
+    <state x="1780" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584685991390">
       <screen x="1366" y="0" width="1920" height="1040" />
     </state>
-    <state x="1780" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1584605403370" />
-    <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1584501595572">
+    <state x="274" y="37" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1584684294246" />
+    <state x="1780" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1584685991390" />
+    <state x="2137" y="351" key="#com.intellij.ide.actions.DebugLogConfigureAction" timestamp="1584671025061">
+      <screen x="1366" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2137" y="351" key="#com.intellij.ide.actions.DebugLogConfigureAction/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1584671025061" />
+    <state x="391" y="0" key="#go_build_flybook.go" timestamp="1584669521097">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1584501595572" />
-    <state width="1877" height="179" key="GridCell.Tab.0.bottom" timestamp="1584610641190">
+    <state x="391" y="0" key="#go_build_flybook.go/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1584669521097" />
+    <state x="1926" y="113" key="CommitChangelistDialog2" timestamp="1584686166696">
       <screen x="1366" y="0" width="1920" height="1040" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1584512917133" />
-    <state width="1877" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1584610641190" />
-    <state width="1877" height="179" key="GridCell.Tab.0.center" timestamp="1584610641189">
+    <state x="1926" y="113" key="CommitChangelistDialog2/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1584686166696" />
+    <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1584682648083">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1584682648083" />
+    <state width="1877" height="118" key="GridCell.Tab.0.bottom" timestamp="1584685763249">
       <screen x="1366" y="0" width="1920" height="1040" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1584512917133" />
-    <state width="1877" height="179" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1584610641189" />
-    <state width="1877" height="179" key="GridCell.Tab.0.left" timestamp="1584610641189">
+    <state width="1323" height="118" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1584685576082" />
+    <state width="1877" height="118" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1584685763249" />
+    <state width="1877" height="118" key="GridCell.Tab.0.center" timestamp="1584685763249">
       <screen x="1366" y="0" width="1920" height="1040" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1584512917133" />
-    <state width="1877" height="179" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1584610641189" />
-    <state width="1877" height="179" key="GridCell.Tab.0.right" timestamp="1584610641189">
+    <state width="1323" height="118" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1584685576082" />
+    <state width="1877" height="118" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1584685763249" />
+    <state width="1877" height="118" key="GridCell.Tab.0.left" timestamp="1584685763249">
       <screen x="1366" y="0" width="1920" height="1040" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1584512917133" />
-    <state width="1877" height="179" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1584610641189" />
-    <state x="1989" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1584521630651">
+    <state width="1323" height="118" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1584685576082" />
+    <state width="1877" height="118" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1584685763249" />
+    <state width="1877" height="118" key="GridCell.Tab.0.right" timestamp="1584685763249">
       <screen x="1366" y="0" width="1920" height="1040" />
     </state>
-    <state x="1989" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1584521630651" />
+    <state width="1323" height="118" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1584685576082" />
+    <state width="1877" height="118" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1584685763249" />
+    <state x="1989" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1584671296787">
+      <screen x="1366" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1989" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1584671296787" />
   </component>
 </project>
