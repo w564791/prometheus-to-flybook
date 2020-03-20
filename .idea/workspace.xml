@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="23cc613b-0eef-40bd-9d5e-b3294b17de38" name="Default Changelist" comment="add message level">
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flybook.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flybook.go" beforeDir="false" afterPath="$PROJECT_DIR$/flybook.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
     </list>
@@ -26,6 +25,7 @@
   <component name="GOROOT" path="C:\Go" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="GoLibraries">
     <option name="indexEntireGoPath" value="false" />
@@ -114,10 +114,11 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="391" y="0" key="#go_build_flybook.go/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1584669521097" />
-    <state x="1926" y="113" key="CommitChangelistDialog2" timestamp="1584686166696">
-      <screen x="1366" y="0" width="1920" height="1040" />
+    <state x="398" y="0" key="CommitChangelistDialog2" timestamp="1584691117429">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="1926" y="113" key="CommitChangelistDialog2/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1584686166696" />
+    <state x="398" y="0" key="CommitChangelistDialog2/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1584691117429" />
+    <state x="1926" y="113" key="CommitChangelistDialog2/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1584686321965" />
     <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1584682648083">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -142,6 +143,10 @@
     </state>
     <state width="1323" height="118" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1584685576082" />
     <state width="1877" height="118" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1584685763249" />
+    <state x="2118" y="436" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1584686248265">
+      <screen x="1366" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2118" y="436" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1584686248265" />
     <state x="1989" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1584671296787">
       <screen x="1366" y="0" width="1920" height="1040" />
     </state>

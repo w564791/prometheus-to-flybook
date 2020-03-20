@@ -1,4 +1,4 @@
-module flaybook
+module flybook
 
 go 1.14
 

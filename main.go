@@ -14,6 +14,9 @@ import (
 )
 
 //time format RFC3339 to 2020-03-18 08:04:17
+func SeqAdd(index int, seq int) int {
+	return index + seq
+}
 func TimeFormat(s string) (t string) {
 	tmpT, _ := time.Parse(time.RFC3339, s)
 	t = tmpT.Format(time_layout)
@@ -41,10 +44,15 @@ func DataToFlyBook(msg Message) (flybook Flybook, err error) {
 
 	msg.StartsAt = msg.Alerts[0].StartsAt
 	msg.EndsAt = msg.Alerts[0].EndsAt
+	for index, _ := range msg.Alerts {
 
+		delete(msg.Alerts[index].Labels, "alertname")
+		delete(msg.Alerts[index].Labels, "severity")
+	}
 	funcMap = template.FuncMap{
 		"ToUpper":      strings.ToUpper,
 		"ToTimeFormat": TimeFormat,
+		"Add":          SeqAdd,
 	}
 
 	if msg.Status == "firing" {
