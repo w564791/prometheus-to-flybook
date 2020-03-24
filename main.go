@@ -3,7 +3,10 @@ package main
 import (
 	"bytes"
 	"encoding/json"
+	"flybook/metrics"
 	"fmt"
+	"github.com/prometheus/client_golang/prometheus"
+	"github.com/prometheus/client_golang/prometheus/promhttp"
 	"gopkg.in/alecthomas/kingpin.v2"
 	"io/ioutil"
 	"log"
@@ -19,7 +22,9 @@ func SeqAdd(index int, seq int) int {
 }
 func TimeFormat(s string) (t string) {
 	tmpT, _ := time.Parse(time.RFC3339, s)
-	t = tmpT.Format(time_layout)
+	m, _ := time.ParseDuration("+8h")
+	tmpT2 := tmpT.Add(m)
+	t = tmpT2.Format(time_layout)
 	return
 }
 
@@ -34,6 +39,12 @@ func ArgsDeploy(fargs *[]string) (args map[string]string) {
 	}
 	args = tmpArg
 	return
+}
+func init() {
+	prometheus.MustRegister(metrics.FlybookMetricsRecived)
+	prometheus.MustRegister(metrics.FlybookMetricsSend)
+	prometheus.MustRegister(metrics.FlybookMetricsCode)
+
 }
 
 //dump data to flaybook msgData {"title":"msg":,"text":"msg"}
@@ -83,38 +94,49 @@ func KeySearch(m map[string]string, s string, ss *string) (url *string) {
 	return
 }
 func MessageDeploy(w http.ResponseWriter, r *http.Request) {
-	var message Message
-	var url *string
-	var args map[string]string
+	if r.Method == "POST" {
+		var message Message
+		var url *string
+		var args map[string]string
+		if r.Body == nil {
+			fmt.Println("No Body")
+		}
+		metrics.FlybookMetricsRecived.Inc()
+		s, _ := ioutil.ReadAll(r.Body)
 
-	if r.Body == nil {
-		fmt.Println("No Body")
-	}
-	s, _ := ioutil.ReadAll(r.Body)
-	err := json.Unmarshal([]byte(s), &message)
-	if err != nil {
-		log.Println(err.Error())
-	}
-	flydata, err := DataToFlyBook(message)
-	if err != nil {
-		log.Println(err.Error())
-	}
-	args = ArgsDeploy(flyBookHook)
-	switch message.CommonLabels["severity"] {
-	case message.CommonLabels["severity"]:
-		url = KeySearch(args, message.CommonLabels["severity"], url)
-	default:
-		url = KeySearch(args, "default", url)
+		err := json.Unmarshal([]byte(s), &message)
+		if err != nil {
+			log.Println(err.Error())
+		}
+		flydata, err := DataToFlyBook(message)
+		if err != nil {
+			log.Println(err.Error())
+		}
+		args = ArgsDeploy(flyBookHook)
+		switch message.CommonLabels["severity"] {
+		case message.CommonLabels["severity"]:
+			url = KeySearch(args, message.CommonLabels["severity"], url)
+		default:
+			url = KeySearch(args, "default", url)
+		}
+
+		statusCode, err := SendMessage(&flydata, *url)
+		if err != nil {
+			log.Println(err.Error())
+
+		}
+		if statusCode == 200 {
+			metrics.FlybookMetricsSend.Inc()
+		}
+		metrics.FlybookMetricsCode.WithLabelValues(fmt.Sprint(statusCode)).Inc()
+		sourceIp := strings.Split(r.RemoteAddr, ":")[0]
+		fmt.Fprintf(w, "send")
+		log.Println(fmt.Sprintf("- %s - %d -  [ %s ] Alerts  send - %s", sourceIp, statusCode, message.GroupLabels["alertname"], message.Status))
+
+	} else {
+		log.Println(fmt.Sprint("Method not Support %s", r.Method))
 	}
 
-	statusCode, err := SendMessage(&flydata, *url)
-	if err != nil {
-		log.Println(err.Error())
-
-	}
-	rourceIp := strings.Split(r.RemoteAddr, ":")[0]
-	fmt.Fprintf(w, "send")
-	log.Println(fmt.Sprintf("- %s - %d -  Send %s Monitor messge - %s", rourceIp, statusCode, message.GroupLabels["alertname"], message.Status))
 }
 func SendMessage(msg *Flybook, url string) (respcode int, err error) {
 	b := new(bytes.Buffer)
@@ -141,6 +163,7 @@ func main() {
 	kingpin.Parse()
 	log.Println(fmt.Sprintf("Starting Server At %s", boundPort))
 	http.HandleFunc("/", MessageDeploy)
+	http.Handle("/metrics", promhttp.Handler())
 
 	log.Fatal(http.ListenAndServe(boundPort, nil))
 

@@ -96,12 +96,12 @@ type Flybook struct {
 const (
 	ftemplJson = `
 {"title": "[{{.CommonLabels.severity|ToUpper}} {{.Status|ToUpper}}] {{.GroupLabels.alertname}} [{{len .Alerts}}]",
-"text": "{{ range $index,$item := .Alerts}}{{Add $index 1}}.Lebels:\n{{range $key,$value:= .Labels}}\t- {{$key}} : {{$value}}\n{{end}}  StartAt: {{ .StartsAt|ToTimeFormat}}\n  Annotations:\n\tmessage: {{.Annotations.message}}\n{{end}}"}
+"text": "{{ range $index,$item := .Alerts}}{{Add $index 1}}.Lebels:\n{{range $key,$value:= .Labels}}    - {{$key}} : {{$value}}\n{{end}}  StartAt: {{ .StartsAt|ToTimeFormat}}\n  Annotations:\n    message: {{.Annotations.message}}\n{{end}}"}
 `
 
 	rtemplJson = `
 {"title": "[{{.CommonLabels.severity|ToUpper}} {{.Status|ToUpper}}] {{.GroupLabels.alertname}} [{{len .Alerts}}]",
-"text": "{{ range $index,$item := .Alerts}}{{Add $index 1}}.Lebels:\n{{range $key,$value:= .Labels}}\t- {{$key}} : {{$value}}\n{{end}}  StartAt: {{ .StartsAt|ToTimeFormat}}\n  EndsAt: {{.EndsAt|ToTimeFormat}}\n  Annotations:\n\tmessage: {{.Annotations.message}}\n{{end}}"}
+"text": "{{ range $index,$item := .Alerts}}{{Add $index 1}}.Lebels:\n{{range $key,$value:= .Labels}}    - {{$key}} : {{$value}}\n{{end}}  StartAt: {{ .StartsAt|ToTimeFormat}}\n  EndsAt: {{.EndsAt|ToTimeFormat}}\n  Annotations:\n    message: {{.Annotations.message}}\n{{end}}"}
 `
 
 	//	url="https://open.feishu.cn/open-apis/bot/hook/bcd7176ae53d444e8d042d9231d0a778"

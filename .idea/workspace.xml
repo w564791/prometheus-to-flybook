@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="23cc613b-0eef-40bd-9d5e-b3294b17de38" name="Default Changelist" comment="add message level">
+    <list default="true" id="23cc613b-0eef-40bd-9d5e-b3294b17de38" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/metrics/metrics.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/flybook.go" beforeDir="false" afterPath="$PROJECT_DIR$/flybook.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
@@ -43,9 +44,13 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="configurable.Global.GOPATH.is.expanded" value="true" />
+    <property name="configurable.Module.GOPATH.is.expanded" value="true" />
+    <property name="configurable.Project.GOPATH.is.expanded" value="true" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../awesomeProject1" />
+    <property name="settings.editor.selected.configurable" value="com.goide.configuration.GoLibrariesConfigurableProvider" />
   </component>
   <component name="RunManager" selected="Go Build.go build main.go">
     <configuration name="go build flaybook" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
@@ -94,7 +99,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add message level" />
-    <option name="LAST_COMMIT_MESSAGE" value="add message level" />
+    <MESSAGE value="modify template" />
+    <option name="LAST_COMMIT_MESSAGE" value="modify template" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
@@ -114,35 +120,39 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="391" y="0" key="#go_build_flybook.go/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1584669521097" />
-    <state x="398" y="0" key="CommitChangelistDialog2" timestamp="1584691117429">
+    <state x="398" y="0" key="CommitChangelistDialog2" timestamp="1584691146990">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="398" y="0" key="CommitChangelistDialog2/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1584691117429" />
+    <state x="398" y="0" key="CommitChangelistDialog2/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1584691146990" />
     <state x="1926" y="113" key="CommitChangelistDialog2/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1584686321965" />
     <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1584682648083">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1584682648083" />
-    <state width="1877" height="118" key="GridCell.Tab.0.bottom" timestamp="1584685763249">
-      <screen x="1366" y="0" width="1920" height="1040" />
+    <state width="1877" height="118" key="GridCell.Tab.0.bottom" timestamp="1584692889190">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="118" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1584685576082" />
+    <state width="1877" height="118" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1584692889190" />
     <state width="1877" height="118" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1584685763249" />
-    <state width="1877" height="118" key="GridCell.Tab.0.center" timestamp="1584685763249">
-      <screen x="1366" y="0" width="1920" height="1040" />
+    <state width="1877" height="118" key="GridCell.Tab.0.center" timestamp="1584692889190">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="118" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1584685576082" />
+    <state width="1877" height="118" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1584692889190" />
     <state width="1877" height="118" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1584685763249" />
-    <state width="1877" height="118" key="GridCell.Tab.0.left" timestamp="1584685763249">
-      <screen x="1366" y="0" width="1920" height="1040" />
+    <state width="1877" height="118" key="GridCell.Tab.0.left" timestamp="1584692889190">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="118" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1584685576082" />
+    <state width="1877" height="118" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1584692889190" />
     <state width="1877" height="118" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1584685763249" />
-    <state width="1877" height="118" key="GridCell.Tab.0.right" timestamp="1584685763249">
+    <state width="1877" height="118" key="GridCell.Tab.0.right" timestamp="1584692889190">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1877" height="118" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1584692889190" />
+    <state width="1877" height="118" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1584685763249" />
+    <state x="1827" y="162" key="SettingsEditor" timestamp="1585039232553">
       <screen x="1366" y="0" width="1920" height="1040" />
     </state>
-    <state width="1323" height="118" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1584685576082" />
-    <state width="1877" height="118" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1584685763249" />
+    <state x="1827" y="162" key="SettingsEditor/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1585039232553" />
     <state x="2118" y="436" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1584686248265">
       <screen x="1366" y="0" width="1920" height="1040" />
     </state>
