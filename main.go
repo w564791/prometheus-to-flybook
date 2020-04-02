@@ -103,7 +103,7 @@ func MessageDeploy(w http.ResponseWriter, r *http.Request) {
 		}
 		metrics.FlybookMetricsRecived.Inc()
 		s, _ := ioutil.ReadAll(r.Body)
-
+		//json.NewDecoder(r.Body).Decode(&message)
 		err := json.Unmarshal([]byte(s), &message)
 		if err != nil {
 			log.Println(err.Error())
